@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question_friend_id: 
+  message: MyString
+  is_from: false
+
+two:
+  question_friend_id: 
+  message: MyString
+  is_from: false

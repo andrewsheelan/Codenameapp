@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shopper_id: 1
+  question_image_id: 
+  question_friend_id: 
+
+two:
+  shopper_id: 1
+  question_image_id: 
+  question_friend_id: 
