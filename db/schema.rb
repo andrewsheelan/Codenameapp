@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131125234413) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "chats", force: true do |t|
     t.integer  "question_friend_id"
     t.string   "message"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20131125234413) do
     t.datetime "updated_at"
   end
 
-  add_index "chats", ["question_friend_id"], name: "index_chats_on_question_friend_id"
+  add_index "chats", ["question_friend_id"], name: "index_chats_on_question_friend_id", using: :btree
 
   create_table "expert_categories", force: true do |t|
     t.string   "name"
@@ -37,7 +40,7 @@ ActiveRecord::Schema.define(version: 20131125234413) do
     t.datetime "updated_at"
   end
 
-  add_index "fav_groups", ["user_id"], name: "index_fav_groups_on_user_id"
+  add_index "fav_groups", ["user_id"], name: "index_fav_groups_on_user_id", using: :btree
 
   create_table "question_friends", force: true do |t|
     t.integer  "question_id"
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 20131125234413) do
     t.datetime "updated_at"
   end
 
-  add_index "question_friends", ["question_id"], name: "index_question_friends_on_question_id"
+  add_index "question_friends", ["question_id"], name: "index_question_friends_on_question_id", using: :btree
 
   create_table "question_images", force: true do |t|
     t.integer  "question_id"
@@ -56,7 +59,7 @@ ActiveRecord::Schema.define(version: 20131125234413) do
     t.datetime "updated_at"
   end
 
-  add_index "question_images", ["question_id"], name: "index_question_images_on_question_id"
+  add_index "question_images", ["question_id"], name: "index_question_images_on_question_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.integer  "shopper_id"
@@ -66,8 +69,8 @@ ActiveRecord::Schema.define(version: 20131125234413) do
     t.datetime "updated_at"
   end
 
-  add_index "questions", ["question_friend_id"], name: "index_questions_on_question_friend_id"
-  add_index "questions", ["question_image_id"], name: "index_questions_on_question_image_id"
+  add_index "questions", ["question_friend_id"], name: "index_questions_on_question_friend_id", using: :btree
+  add_index "questions", ["question_image_id"], name: "index_questions_on_question_image_id", using: :btree
 
   create_table "ratings", force: true do |t|
     t.string   "name"
@@ -84,9 +87,9 @@ ActiveRecord::Schema.define(version: 20131125234413) do
     t.datetime "updated_at"
   end
 
-  add_index "user_expert_categories", ["expert_category_id"], name: "index_user_expert_categories_on_expert_category_id"
-  add_index "user_expert_categories", ["rating_id"], name: "index_user_expert_categories_on_rating_id"
-  add_index "user_expert_categories", ["user_id"], name: "index_user_expert_categories_on_user_id"
+  add_index "user_expert_categories", ["expert_category_id"], name: "index_user_expert_categories_on_expert_category_id", using: :btree
+  add_index "user_expert_categories", ["rating_id"], name: "index_user_expert_categories_on_rating_id", using: :btree
+  add_index "user_expert_categories", ["user_id"], name: "index_user_expert_categories_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "nickname"
