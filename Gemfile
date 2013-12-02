@@ -39,6 +39,7 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'jquery_mobile_rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -47,4 +48,5 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+# gem 'debugger', group: [:development, :testle_rails']
+
