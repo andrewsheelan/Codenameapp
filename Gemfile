@@ -41,6 +41,7 @@ end
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'jquery_mobile_rails'
 
+gem 'rails_12factor'
 # Use unicorn as the app server
 # gem 'unicorn'
 
