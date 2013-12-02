@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   def allow_iframe
-    response.headers.except! 'X-Frame-Options'
+    puts "Entered allow frame"
+    response.headers['X-Frame-Options'] = 'ALLOW-FROM http://codenameapp.herokuapp.com/'
+    
   end
 end
