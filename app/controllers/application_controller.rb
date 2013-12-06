@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def login
-    user = User.find_by_phone_number(params[:phoneNumber])
+    user = User.find_by_phone(params[:phoneNumber])
     if user.authenticate(params[:password])
       render json: {logged_in: true}
     else
