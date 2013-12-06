@@ -1,5 +1,6 @@
 Codenameapp::Application.routes.draw do
   post 'user/login' => 'application#login'
+  get 'user/login' => 'application#login'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
