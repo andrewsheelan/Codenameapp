@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     response.headers['X-Frame-Options'] = 'ALLOW-FROM http://codenameapp.herokuapp.com/'
     
   end
+
+  def login
+    puts "Successful.. " + params
+  end
 end
