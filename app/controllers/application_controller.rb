@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def login
-    puts "Successful.. " + params
+    puts "Successful.. " + params[:phoneNumber] + "  " + params[:password]
+    render json: {logged_in: true}
   end
 end
